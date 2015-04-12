@@ -41,47 +41,99 @@ public class Presentation {
 	 */
 	private Student presenter;
 	
+	/**
+	 * Empty default constructor.
+	 */
 	public Presentation() {
-		
 	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public Date getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-
-	public Date getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
-
-	public Student getPresenter() {
-		return presenter;
-	}
-
-	public void setPresenter(Student presenter) {
-		this.presenter = presenter;
-	}
-
+	
+	/**
+	 * Get the identifier of the presentation.
+	 * 
+	 * @return	unique identifier
+	 */
 	public Integer getId() {
 		return id;
 	}
 
+	/**
+	 * Set the identifier of the presentation.
+	 * 
+	 * @param id
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}	
+
+	/**
+	 * Get the title of the presentation.
+	 * 
+	 * @return title
+	 */
+	public String getTitle() {
+		return title;
+	}
+
+	/**
+	 * Set the title of the presentation.
+	 * 
+	 * @param title
+	 */
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	/**
+	 * Get the start date of the presentation.
+	 * 
+	 * @return	start date
+	 */
+	public Date getStartDate() {
+		return startDate;
+	}
+
+	/**
+	 * Set the start date of the presentation.
+	 * 
+	 * @param startDate
+	 */
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	/**
+	 * Get the end date of the presentation.
+	 * 
+	 * @return	end date
+	 */
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	/**
+	 * Set the end date of the presentation.
+	 * 
+	 * @param endDate
+	 */
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+	/**
+	 * Get the student, who is presenting.
+	 * 
+	 * @return	presenter
+	 */
+	public Student getPresenter() {
+		return presenter;
+	}
+
+	/**
+	 * Set the student, who is presenting.
+	 * 
+	 * @param presenter
+	 */
+	public void setPresenter(Student presenter) {
+		this.presenter = presenter;
+	}
 }

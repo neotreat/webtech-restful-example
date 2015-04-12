@@ -19,13 +19,26 @@ public class Student extends Person {
 	 */
 	private int matriculationNumber;
 	
+	/**
+	 * Empty default constructor.
+	 */
 	public Student() {
 	}
 
+	/**
+	 * Get the matriculation number of the student.
+	 * 
+	 * @return	matriculation number
+	 */
 	public int getMatriculationNumber() {
 		return matriculationNumber;
 	}
 
+	/**
+	 * Set the matriculation number of the student.
+	 * 
+	 * @param matriculationNumber
+	 */
 	public void setMatriculationNumber(int matriculationNumber) {
 		this.matriculationNumber = matriculationNumber;
 	}

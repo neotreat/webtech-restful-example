@@ -16,20 +16,35 @@ import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 
 import de.tum.in.webtech.database.StaticDatabase;
-import de.tum.in.webtech.model.Presentation;
 import de.tum.in.webtech.model.Student;
  
+/**
+ * Resource for the students.
+ * 
+ * @author René Milzarek <rene.milzarek@in.tum.de>
+ */
 @Path("/student")
 @Api(value="/students", description="Student Operations")
 public class StudentResource {
  
+	/**
+	 * Get all stored students.
+	 * 
+	 * @return	list of all students.
+	 */
 	@GET
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	@ApiOperation(value = "Get all students", response = Student.class)
 	public List<Student> getAllStudents() {
 		return StaticDatabase.getAllStudents();
 	}
-	 
+	
+	/**
+	 * Get the student with the given identifier.
+	 * 
+	 * @param id
+	 * @return	student
+	 */
 	@GET
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	@Path("{id}")
@@ -38,6 +53,11 @@ public class StudentResource {
 		return StaticDatabase.getStudent(id);
 	}
 	
+	/**
+	 * Delete the student with the given identifier.
+	 * 
+	 * @param id
+	 */
 	@DELETE
 	@Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
@@ -47,6 +67,11 @@ public class StudentResource {
 		StaticDatabase.deleteStudent(id);
 	}
 	
+	/**
+	 * Create a new student.
+	 * 
+	 * @param student
+	 */
 	@POST
 	@Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
@@ -55,6 +80,12 @@ public class StudentResource {
 		StaticDatabase.postStudent(student);
 	}
 	
+	/**
+	 * Update the student with the given identifier.
+	 * 
+	 * @param id
+	 * @param student
+	 */
 	@PUT
 	@Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
