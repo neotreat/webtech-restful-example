@@ -13,10 +13,11 @@ import javax.ws.rs.core.MediaType;
 
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
+import com.wordnik.swagger.annotations.ApiResponse;
+import com.wordnik.swagger.annotations.ApiResponses;
 
 import de.tum.in.webtech.database.StaticDatabase;
 import de.tum.in.webtech.model.Presentation;
-import de.tum.in.webtech.model.Student;
 
 /**
  * Resource for the presentations.
@@ -35,6 +36,11 @@ public class PresentationResource {
 	@GET
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	@ApiOperation(value = "Get all presentations", response = Presentation.class)
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Returned list of presentations"),
+		    @ApiResponse(code = 204, message = "No presentations available"),
+		    @ApiResponse(code = 500, message = "Internal server error due to encoding the data"),
+		    @ApiResponse(code = 400, message = "Bad request due to decoding the data"),
+		    @ApiResponse(code = 412, message = "Pre condition failed due to required data not found") })
 	public List<Presentation> getAllPresentations() {
 		return StaticDatabase.getAllPresentations();
 	}
@@ -49,6 +55,11 @@ public class PresentationResource {
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	@Path("{id}")
 	@ApiOperation(value = "Get a presentations by its id", response = Presentation.class)
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Given presentation found"),
+		    @ApiResponse(code = 404, message = "Given presentation not found"),
+		    @ApiResponse(code = 500, message = "Internal server error due to encoding the data"),
+		    @ApiResponse(code = 400, message = "Bad request due to decoding the data"),
+		    @ApiResponse(code = 412, message = "Pre condition failed due to required data not found") })
 	public Presentation getPresentation(@PathParam("id") int id) {
 		return StaticDatabase.getPresentation(id);
 	}
@@ -63,6 +74,11 @@ public class PresentationResource {
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	@Path("{id}")
 	@ApiOperation(value = "Delete a presentation by its id")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Given presentation deleted"),
+		    @ApiResponse(code = 404, message = "Given presentation not found"),
+		    @ApiResponse(code = 500, message = "Internal server error due to encoding the data"),
+		    @ApiResponse(code = 400, message = "Bad request due to decoding the data"),
+		    @ApiResponse(code = 412, message = "Pre condition failed due to required data not found") })
 	public void deletePresentation(@PathParam("id") int id) {
 		StaticDatabase.deletePresentation(id);
 	}
@@ -78,6 +94,10 @@ public class PresentationResource {
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	@Path("{id}")
 	@ApiOperation(value = "Update an existing presentation by its id")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Given presentation updated"),
+		    @ApiResponse(code = 500, message = "Internal server error due to encoding the data"),
+		    @ApiResponse(code = 400, message = "Bad request due to decoding the data"),
+		    @ApiResponse(code = 412, message = "Pre condition failed due to required data not found") })
 	public void putPresentation(@PathParam("id") int id, Presentation presentation) {
 		StaticDatabase.putPresentation(id, presentation);
 	}
