@@ -2,7 +2,10 @@ package de.tum.in.webtech.resource;
 
 import java.util.List;
 
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -13,6 +16,7 @@ import com.wordnik.swagger.annotations.ApiOperation;
 
 import de.tum.in.webtech.database.StaticDatabase;
 import de.tum.in.webtech.model.Presentation;
+import de.tum.in.webtech.model.Student;
 
 /**
  * Resource for the presentations.
@@ -49,4 +53,32 @@ public class PresentationResource {
 		return StaticDatabase.getPresentation(id);
 	}
 	
+	/**
+	 * Delete the presentation with the given identifier.
+	 * 
+	 * @param id
+	 */
+	@DELETE
+	@Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	@Path("{id}")
+	@ApiOperation(value = "Delete a presentation by its id")
+	public void deletePresentation(@PathParam("id") int id) {
+		StaticDatabase.deletePresentation(id);
+	}
+	
+	/**
+	 * Update the presentation with the given identifier.
+	 * 
+	 * @param id
+	 * @param presentation
+	 */
+	@PUT
+	@Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	@Path("{id}")
+	@ApiOperation(value = "Update an existing presentation by its id")
+	public void putPresentation(@PathParam("id") int id, Presentation presentation) {
+		StaticDatabase.putPresentation(id, presentation);
+	}
 }

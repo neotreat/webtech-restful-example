@@ -268,19 +268,40 @@ public class StaticDatabase {
 		presentations.put(16, p16);
 		presentations.put(17, p17);
 	}
-	 
+	
+	/**
+	 * Get the student with the given identifier.
+	 * 
+	 * @param id
+	 * @return	student
+	 */
 	public static Student getStudent(int id) {
 		return students.get(id);
 	}
-	 
+	
+	/**
+	 * Get all students
+	 * 
+	 * @return	list of all students
+	 */
 	public static List<Student> getAllStudents() {
 		return new ArrayList<Student>(students.values());
 	}
 	
+	/**
+	 * Delete the student with the given identifier.
+	 * 
+	 * @param id
+	 */
 	public static void deleteStudent(int id) {
 		students.remove(id);
 	}
 	
+	/**
+	 * Create a new student.
+	 * 
+	 * @param student
+	 */
 	public static void postStudent(Student student) {
 		
 		// Retrieve the max key
@@ -290,18 +311,67 @@ public class StaticDatabase {
 		students.put(maxKey+1, student);
 	}
 	
+	/**
+	 * Update the student with the given identifier.
+	 * 
+	 * @param id
+	 * @param student
+	 */
 	public static void putStudent(int id, Student student) {
 		student.setId(id);
 		students.put(id, student);
 	}
 	
-	
+	/**
+	 * Get the presentation with the given identifier.
+	 * 
+	 * @param id
+	 * @return	presentation
+	 */
 	public static Presentation getPresentation(int id) {
 		return presentations.get(id);
 	}
-	 
+	
+	/**
+	 * Get all presentations
+	 * 
+	 * @return	list of all presentations
+	 */
 	public static List<Presentation> getAllPresentations() {
 		return new ArrayList<Presentation>(presentations.values());
 	}
-
+	
+	/**
+	 * Delete the presentation with the given identifier.
+	 * 
+	 * @param id
+	 */
+	public static void deletePresentation(int id) {
+		presentations.remove(id);
+	}
+	
+	/**
+	 * Create a new presentation.
+	 * 
+	 * @param presentation
+	 */
+	public static void postPresentation(Presentation presentation) {
+		
+		// Retrieve the max key
+		int maxKey = Collections.max(presentations.keySet());
+		presentation.setId(maxKey+1);
+		
+		presentations.put(maxKey+1, presentation);
+	}
+	
+	/**
+	 * Update the presentation with the given identifier.
+	 * 
+	 * @param id
+	 * @param presentation
+	 */
+	public static void putPresentation(int id, Presentation presentation) {
+		presentation.setId(id);
+		presentations.put(id, presentation);
+	}
 }
