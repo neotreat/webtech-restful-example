@@ -1,5 +1,7 @@
 package de.tum.in.webtech.model;
 
+import com.wordnik.swagger.annotations.ApiModelProperty;
+
 /**
  * Abstract person class as stencil for students, professors, etc.
  * 
@@ -10,21 +12,25 @@ public abstract class Person {
 	/**
 	 * The unique identifier of the person.
 	 */
+	@ApiModelProperty(value = "The unique identifier of the person")
 	private Integer id;
 	
 	/**
 	 * The first name of the person.
 	 */
+	@ApiModelProperty(value = "The first name of the person")
 	private String firstName;
 	
 	/**
 	 * The last name of the person.
 	 */
+	@ApiModelProperty(value = "The last name of the person")
 	private String lastName;
 	
 	/**
 	 * The email address of the person.
 	 */
+	@ApiModelProperty(value = "The email address of the person")
 	private String email;
 	
 	/**

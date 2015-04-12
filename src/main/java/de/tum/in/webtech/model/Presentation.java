@@ -20,31 +20,31 @@ public class Presentation {
 	/**
 	 * The unique identifier of the person.
 	 */
-	@ApiModelProperty(value = "Unique identifier")
+	@ApiModelProperty(value = "The unique identifier of the presentation")
 	private Integer id;
 	
 	/**
 	 * The title of the presentation.
 	 */
-	@ApiModelProperty(value = "Title of the presentation")
+	@ApiModelProperty(value = "The title of the presentation")
 	private String title;
 	
 	/**
 	 * The start date of the presentation.
 	 */
-	@ApiModelProperty(value = "Start date")
+	@ApiModelProperty(value = "The start date of the presentation")
 	private Date startDate;
 	
 	/**
 	 * The end date of the presentation.
 	 */
-	@ApiModelProperty(value = "End date")
+	@ApiModelProperty(value = "The end date of the presentation")
 	private Date endDate;
 	
 	/**
 	 * The student presenting.
 	 */
-	@ApiModelProperty(value = "Student presenting")
+	@ApiModelProperty(value = "The student presenting")
 	private Student presenter;
 	
 	/**

@@ -18,7 +18,7 @@ public class Student extends Person {
 	/**
 	 * The matriculationNumber of the student.
 	 */
-	@ApiModelProperty(value = "Matriculations number")
+	@ApiModelProperty(value = "The matriculations number of the student")
 	private int matriculationNumber;
 	
 	/**
