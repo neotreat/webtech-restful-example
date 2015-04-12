@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.wordnik.swagger.annotations.ApiModel;
+
 /**
  * A presentation held by a student.
  * 
@@ -11,6 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 
 @XmlRootElement
+@ApiModel(value = "A presentation held by a student")
 public class Presentation {
 	
 	/**

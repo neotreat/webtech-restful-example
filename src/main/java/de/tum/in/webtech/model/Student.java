@@ -2,6 +2,8 @@ package de.tum.in.webtech.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.wordnik.swagger.annotations.ApiModel;
+
 /**
  * A student of the TUM.
  * 
@@ -9,6 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 
 @XmlRootElement
+@ApiModel(value = "A student of the TUM")
 public class Student extends Person {
 	
 	/**
