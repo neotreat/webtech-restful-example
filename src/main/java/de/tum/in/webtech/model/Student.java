@@ -3,6 +3,7 @@ package de.tum.in.webtech.model;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.wordnik.swagger.annotations.ApiModel;
+import com.wordnik.swagger.annotations.ApiModelProperty;
 
 /**
  * A student of the TUM.
@@ -17,6 +18,7 @@ public class Student extends Person {
 	/**
 	 * The matriculationNumber of the student.
 	 */
+	@ApiModelProperty(value = "Matriculations number")
 	private int matriculationNumber;
 	
 	/**

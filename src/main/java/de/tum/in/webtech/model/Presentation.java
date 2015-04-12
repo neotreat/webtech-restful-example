@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.wordnik.swagger.annotations.ApiModel;
+import com.wordnik.swagger.annotations.ApiModelProperty;
 
 /**
  * A presentation held by a student.
@@ -19,26 +20,31 @@ public class Presentation {
 	/**
 	 * The unique identifier of the person.
 	 */
+	@ApiModelProperty(value = "Unique identifier")
 	private Integer id;
 	
 	/**
 	 * The title of the presentation.
 	 */
+	@ApiModelProperty(value = "Title of the presentation")
 	private String title;
 	
 	/**
 	 * The start date of the presentation.
 	 */
+	@ApiModelProperty(value = "Start date")
 	private Date startDate;
 	
 	/**
 	 * The end date of the presentation.
 	 */
+	@ApiModelProperty(value = "End date")
 	private Date endDate;
 	
 	/**
 	 * The student presenting.
 	 */
+	@ApiModelProperty(value = "Student presenting")
 	private Student presenter;
 	
 	/**
